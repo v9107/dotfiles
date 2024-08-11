@@ -1,12 +1,18 @@
-local set = vim.keymap.set
-local builtin = require('telescope.builtin')
+local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
+-- local builtin = require('telescope.builtin')
 
-set('n', '<leader>l', "<cmd>Lazy<cr>", { silent = true })
-set('n', '<leader>fd', vim.cmd.Explore, { silent = true })
-set('n', '<leader>m', "<cmd>Mason<cr>", { silent = true })
+keymap.set('n', '<leader>l', "<cmd>Lazy<cr>", { silent = true })
+keymap.set('n', '<leader>m', "<cmd>Mason<cr>", { silent = true })
+keymap.set('n', '<leader>fd', vim.cmd.Explore, { silent = true })
 
-set('n', '<leader>ff', "<cmd> Telescope find_files<cr>", {})
-set('n', '<leader>fg', "<cmd> Telescope live_grep<cr>", {})
-set('n', '<leader>fb', "<cmd> Telescope buffers<cr>", {})
-set('n', '<leader>fh', "<cmd> Telescope help_tags<cr>", {})
-set('n', '<leader>fc', "<cmd>Telescope colorscheme<cr>", {})
+-- telescope keymaps
+keymap.set('n', '<leader>ff', "<cmd> Telescope find_files<cr>", {})
+keymap.set('n', '<leader>fg', "<cmd> Telescope live_grep<cr>", {})
+keymap.set('n', '<leader>fb', "<cmd> Telescope buffers<cr>", {})
+keymap.set('n', '<leader>fh', "<cmd> Telescope help_tags<cr>", {})
+keymap.set('n', '<leader>fc', "<cmd>Telescope colorscheme<cr>", {})
+
+-- split screen
+keymap.set('n', '<leader>vs', "<cmd>vs<cr>", opts)
+keymap.set('n', '<leader>hs', "<cmd>split<cr>", opts)
