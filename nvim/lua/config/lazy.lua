@@ -51,4 +51,4 @@ for _, mod in ipairs(modules) do
   pcall(require, mod)
 end
 
---vim.cmd('colorscheme monokai-pro-classic')
+vim.cmd('colorscheme solarized-osaka-storm')
