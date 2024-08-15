@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+--vim.opt.guicursor = ""
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -23,3 +23,5 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+-- diable the text under default status line
+vim.opt.showmode = false
