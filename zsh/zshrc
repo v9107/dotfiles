@@ -8,7 +8,7 @@ export TMUX_TMPDIR='/tmp'
 eval "$(starship init zsh)"
 
 # alias vi="nvim"
-alias nv="nvim"
+alias vi="nvim"
 alias ls="ls --color=auto"
 alias ll="ls -l"
 alias lla="ls -Al"
