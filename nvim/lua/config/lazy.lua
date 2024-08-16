@@ -22,7 +22,7 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	-- install = { colorscheme = { "habamax" } },
+	install = { colorscheme = { "midnight" } },
 	checker = {
 		enabled = true,
 		notify = false,
@@ -50,4 +50,4 @@ for _, mod in ipairs(modules) do
 	pcall(require, mod)
 end
 
-vim.cmd.colorscheme("solarized-osaka")
+vim.cmd.colorscheme("midnight")

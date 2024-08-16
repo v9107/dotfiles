@@ -8,6 +8,7 @@ return {
 			transparent = false,
 		},
 	},
+	{ "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
 	-- usefull git stuff
 	{
 		"lewis6991/gitsigns.nvim",
