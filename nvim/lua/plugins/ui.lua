@@ -16,4 +16,5 @@ return {
 			require("gitsigns").setup()
 		end,
 	},
+	{ "nvim-tree/nvim-web-devicons" },
 }

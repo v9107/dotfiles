@@ -4,7 +4,7 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "iceberg_dark",
+				theme = "auto",
 				section_separators = "",
 				component_separators = "",
 			},
