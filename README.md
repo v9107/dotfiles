@@ -11,8 +11,9 @@
     - [x] good colorscheme 
     ### Some candidates for colorschemes are (based on my preferences)
     - [x] **[solorized-osaka](https://github.com/craftzdog/solarized-osaka.nvim)** One of the Solarized-inspired dark theme for Neovim written in Lua.
-    - [x] **[midnight.nvim](https://github.com/dasupradyumna/midnight.nvim)** A modern black neovim theme written in Lua, 
+    - [ ] **[midnight.nvim](https://github.com/dasupradyumna/midnight.nvim)** A modern black neovim theme written in Lua, 
           with a strong focus on maintaining a comfortable level of color contrast for a pleasant visual experience while coding.
+    - [x] **[neanias/everforest-nvim](https://github.com/neanias/everforest-nvim)** A Lua port of the everforest colour scheme.
 
     `Im satisfied with these two themes for now ;-)`
 
@@ -25,4 +26,3 @@
 
 ## Shell (zsh)
 * All readey setup with all the things I want.
-

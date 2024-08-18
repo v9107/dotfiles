@@ -4,8 +4,8 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "auto",
-				section_separators = "",
+				theme = "dracula-nvim",
+				section_separators = { right = "", left = "" },
 				component_separators = "",
 			},
 			sections = {
