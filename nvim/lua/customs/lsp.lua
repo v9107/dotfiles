@@ -12,19 +12,6 @@ require("conform").setup({
 })
 require("luasnip.loaders.from_vscode").lazy_load()
 
--- lsp setup
-local protocol = require("vim.lsp.protocol")
-local nvim_lsp = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities(protocol.make_client_capabilities())
-
-nvim_lsp["pylsp"].setup({
-	capabilities = capabilities,
-})
-
-nvim_lsp["lua_ls"].setup({
-	capabilities = capabilities,
-})
-
 --- auto completion setup
 local cmp = require("cmp")
 local lspkind = require("lspkind")
@@ -78,4 +65,21 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 	}),
+})
+
+-- lsp setup
+local protocol = require("vim.lsp.protocol")
+local nvim_lsp = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities(protocol.make_client_capabilities())
+
+nvim_lsp["pylsp"].setup({
+	capabilities = capabilities,
+})
+
+nvim_lsp["lua_ls"].setup({
+	capabilities = capabilities,
+})
+
+nvim_lsp["gopls"].setup({
+	capabilities = capabilities,
 })
