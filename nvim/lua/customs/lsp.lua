@@ -23,7 +23,7 @@ cmp.setup({
 		fields = { "abbr", "kind", "menu" },
 		format = lspkind.cmp_format({
 			-- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-			mode = "symbol",
+			mode = "symbol_text",
 			maxwidth = 50,
 			ellipsis_char = "...",
 			show_labelDetails = true,

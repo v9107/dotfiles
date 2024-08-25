@@ -7,6 +7,9 @@ keymap.set("n", "<leader>e", vim.cmd.Explore, { silent = true })
 -- reload current buffer
 keymap.set("n", "<leader>r", "<cmd>e!<cr>", { silent = true })
 
+-- change background to light
+keymap.set("n", "<leader>cb", "<cmd>set background=light<cr>", { silent = true })
+
 -- telescope keymaps
 keymap.set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", opts)
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)

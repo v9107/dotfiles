@@ -10,7 +10,7 @@ return {
 		local telescope = require("telescope")
 		telescope.setup({
 			defaults = {
-				prompt_prefix = "  ",
+				prompt_prefix = "    ",
 				sorting_strategy = "ascending",
 				layout_config = {
 					prompt_position = "top",
@@ -19,6 +19,9 @@ return {
 			pickers = {
 				colorscheme = {
 					enable_preview = true,
+				},
+				find_files = {
+					previewer = false,
 				},
 			},
 		})
