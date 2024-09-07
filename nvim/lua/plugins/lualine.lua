@@ -4,7 +4,7 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "iceberg_dark",
+				theme = "zenburn",
 				section_separators = { right = "", left = "" },
 				component_separators = "",
 			},
