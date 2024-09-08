@@ -7,17 +7,6 @@ return {
 		},
 	},
 	{
-		"neanias/everforest-nvim",
-		config = function(_, opts)
-			opts = vim.tbl_deep_extend("force", opts, {
-				background = "hard",
-				italics = true,
-				disable_italic_comments = false,
-			})
-			require("everforest").setup(opts)
-		end,
-	},
-	{
 		"Mofiqul/dracula.nvim",
 		lazy = false,
 		priority = 1000,
@@ -25,7 +14,9 @@ return {
 			transparent_bg = false,
 		},
 	},
-	{ "dasupradyumna/midnight.nvim" },
+	{
+		"shaunsingh/nord.nvim",
+	},
 	{ "phha/zenburn.nvim" },
 
 	-- usefull git stuff
