@@ -28,3 +28,4 @@ vim.opt.updatetime = 50
 -- diable the text under default status line
 vim.opt.showmode = false
 --vim.opt.background = "light"
+vim.opt.cursorline = true
