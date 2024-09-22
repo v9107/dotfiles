@@ -4,6 +4,7 @@ local opts = { noremap = true, silent = true }
 keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { silent = true })
 keymap.set("n", "<leader>m", "<cmd>Mason<cr>", { silent = true })
 keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { silent = true })
+keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", { silent = true })
 -- reload current buffer
 keymap.set("n", "<leader>r", "<cmd>e!<cr>", { silent = true })
 
