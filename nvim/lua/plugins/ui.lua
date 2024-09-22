@@ -3,7 +3,7 @@ return {
 	{
 		"craftzdog/solarized-osaka.nvim",
 		opts = {
-			transparent = false,
+			transparent = true,
 		},
 	},
 	{
