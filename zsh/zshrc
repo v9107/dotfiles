@@ -1,11 +1,34 @@
+# refresence from `https://salferrarello.com/zsh-git-status-prompt/`
+# Autoload zsh add-zsh-hook and vcs_info functions (-U autoload w/o substition, -z use zsh style)
+autoload -Uz add-zsh-hook vcs_info
+# Enable substitution in the prompt.
+setopt prompt_subst
+# Run vcs_info just before a prompt is displayed (precmd)
+add-zsh-hook precmd vcs_info
+# add ${vcs_info_msg_0} to the prompt
+# e.g. here we add the Git information in red  
+PROMPT='%B%F{black}%m%f%b %~ %F{red}${vcs_info_msg_0_}%f %# '
+
+# Enable checking for (un)staged changes, enabling use of %u and %c
+zstyle ':vcs_info:*' check-for-changes true
+# Set custom strings for an unstaged vcs repo changes (*) and staged changes (+)
+zstyle ':vcs_info:*' unstagedstr ' *'
+zstyle ':vcs_info:*' stagedstr ' +'
+# Set the format of the Git information for vcs_info
+zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
+zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
+
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/venkatesh/.zsh/completions:"* ]]; then export FPATH="/home/venkatesh/.zsh/completions:$FPATH"; fi
 source "$HOME/opt/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/opt/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # init ocaml
 eval $(opam env --switch=default)
 export TMUX_TMPDIR='/tmp'
+
 # evaluate starship prompt
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # alias vi="nvim"
 alias vi="nvim"
@@ -34,3 +57,12 @@ export NVM_DIR="$HOME/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+. "/home/venkatesh/.deno/env"
+
+# pnpm
+export PNPM_HOME="/home/venkatesh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
