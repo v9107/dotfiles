@@ -1,10 +1,16 @@
 vim.cmd.completeopt = { "menuone", "noinsert", "noselect" }
 
+local formatter_table = {
+	lua = { "stylua" },
+	python = { "isort", "black" },
+	ocaml = { "ocamlformat" },
+}
+
 require("mason").setup()
 require("mason-lspconfig").setup({ automatic_installation = { exclude = { "pylsp" } } })
 -- auto formating
 require("conform").setup({
-	formatters_by_ft = { lua = { "stylua" }, python = { "isort", "black" } },
+	formatters_by_ft = formatter_table,
 	format_on_save = {
 		timeout_ms = 500,
 		lsp_format = "fallback",
