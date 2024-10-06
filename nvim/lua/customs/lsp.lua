@@ -4,6 +4,7 @@ local formatter_table = {
 	lua = { "stylua" },
 	python = { "isort", "black" },
 	ocaml = { "ocamlformat" },
+	rust = { "rustfmt" },
 }
 
 require("mason").setup()
