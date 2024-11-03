@@ -11,13 +11,14 @@ local function floating_oil_window()
 	end
 end
 
-keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { silent = true })
-keymap.set("n", "<leader>m", "<cmd>Mason<cr>", { silent = true })
-keymap.set("n", "<leader>e", floating_oil_window, { silent = true })
-keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", { silent = true })
-keymap.set("n", "<leader>r", "<cmd>e!<cr>", { silent = true }) -- reload current buffer
+keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", opts)
+keymap.set("n", "<leader>m", "<cmd>Mason<cr>", opts)
+keymap.set("n", "<leader>e", floating_oil_window, opts)
+keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", opts)
+keymap.set("n", "<tab>", "<cmd>tabn<cr>", opts)
+keymap.set("n", "<s-tab>", "<cmd>tabp<cr>", opts)
 
-keymap.set("n", "<leader>cb", "<cmd>set background=light<cr>", { silent = true }) -- change background to light
+keymap.set("n", "<leader>cb", "<cmd>set background=light<cr>", opts) -- change background to light
 
 keymap.set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", opts) -- telescope keymaps
 

@@ -25,14 +25,15 @@ zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/venkatesh/.zsh/completions:"* ]]; then export FPATH="/home/venkatesh/.zsh/completions:$FPATH"; fi
 source "$HOME/opt/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-#source "$HOME/opt/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOME/opt/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # init ocaml
 eval $(opam env --switch=default)
+
 export TMUX_TMPDIR='/tmp'
 
 # evaluate starship prompt
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # alias vi="nvim"
 alias vi="nvim"
