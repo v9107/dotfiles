@@ -5,6 +5,7 @@ local formatter_table = {
 	python = { "isort", "black" },
 	ocaml = { "ocamlformat" },
 	rust = { "rustfmt" },
+	nix = { "nixfmt" },
 }
 
 require("mason").setup()

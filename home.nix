@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -18,9 +17,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    pkgs.hello
+    # formatter for .nix files
+    pkgs.nixfmt-rfc-style
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -53,7 +51,6 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -105,7 +102,10 @@
       dotDir = ".config/zsh";
     };
     nushell.enable = true;
-    starship.enable = true;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     git.enable = true;
   };
 
