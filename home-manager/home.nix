@@ -17,8 +17,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # formatter for .nix files
-    pkgs.nixfmt-rfc-style
+
+    pkgs.nixfmt-rfc-style # formatter for .nix files
+    pkgs.deno
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -77,7 +78,7 @@
 
     # Not officially in the specification
     XDG_BIN_HOME = "$HOME/.local/bin";
-    PATH = "${XDG_BIN_HOME}:$PATH";
+    PATH = "$HOME/.cargo/bin:${pkgs.zsh}:${pkgs.coreutils}:${XDG_BIN_HOME}:$PATH";
   };
 
   programs = {
