@@ -26,6 +26,9 @@ local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
 cmp.setup({
+	completion = {
+		autocomplete = false,
+	},
 	formatting = {
 		-- ordering row items
 		fields = { "abbr", "kind", "menu" },
