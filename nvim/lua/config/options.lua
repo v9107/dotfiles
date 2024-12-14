@@ -1,4 +1,4 @@
---vim.opt.guicursor = ""
+--vim.opt.guicursor = ""                     -- disable the cursor change when in insert mode
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -7,7 +7,8 @@ vim.opt.expandtab = true
 
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.number = false
+
+--vim.opt.number = false
 
 vim.opt.wrap = false
 
@@ -27,5 +28,3 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 -- diable the text under default status line
 vim.opt.showmode = false
---vim.opt.background = "light"
---vim.opt.cursorline = true

@@ -50,4 +50,4 @@ for _, mod in ipairs(modules) do
 	pcall(require, mod)
 end
 
-vim.cmd.colorscheme("github_dark_dimmed")
+vim.cmd.colorscheme("zenbones")
