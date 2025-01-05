@@ -1,22 +1,17 @@
 return {
 	-- colorscheme
 	{
-		"craftzdog/solarized-osaka.nvim",
-		opts = {
-			transparent = true,
-		},
-	},
-	{
 		"zenbones-theme/zenbones.nvim",
 		dependencies = "rktjmp/lush.nvim",
 		lazy = false,
 		priority = 1000,
 	},
 	{
-		"projekt0n/github-nvim-theme",
-		name = "github-theme",
-		lazy = false,
-		priority = 1000,
+		-- Using Packer
+		"navarasu/onedark.nvim",
+		opts = {
+			style = "warmer",
+		},
 	},
 	-- usefull git stuff
 	{

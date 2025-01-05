@@ -85,7 +85,7 @@
     zsh = {
       enable = true;
       enableCompletion = true;
-      autosuggestion.enable = true;
+      # autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
         ll = "ls -l";
@@ -108,6 +108,7 @@
       enableZshIntegration = true;
     };
     git.enable = true;
+    helix.enable = true;
   };
 
   # Let Home Manager install and manage itself.
