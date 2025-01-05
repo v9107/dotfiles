@@ -31,6 +31,7 @@ source "$HOME/opt/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 eval $(opam env --switch=default)
 
 export TMUX_TMPDIR='/tmp'
+export MYPY_CACHE_DIR='/dev/null'
 
 # evaluate starship prompt
 eval "$(starship init zsh)"

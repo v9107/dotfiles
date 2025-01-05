@@ -79,13 +79,14 @@
     # Not officially in the specification
     XDG_BIN_HOME = "$HOME/.local/bin";
     PATH = "$HOME/.cargo/bin:${pkgs.zsh}:${pkgs.coreutils}:${XDG_BIN_HOME}:$PATH";
+    MYPY_CACHE_DIR = "/dev/null";
   };
 
   programs = {
     zsh = {
       enable = true;
       enableCompletion = true;
-      # autosuggestion.enable = true;
+      autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
         ll = "ls -l";
