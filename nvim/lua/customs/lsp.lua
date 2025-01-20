@@ -71,7 +71,6 @@ cmp.setup({
         { name = "path" },
     }),
 })
-
 -- lsp setup
 local protocol = require("vim.lsp.protocol")
 local lspconfig = require("lspconfig")
@@ -82,40 +81,43 @@ lspconfig.pylsp.setup({
     capabilities = capabilities,
     settings = {
         pylsp = {
+            configurationSources = {},
             plugins = {
-                pydocstyle = { enabled = false },
                 jedi_completion = {
                     enabled = true,
                     include_params = true,
                     fuzzy = true,
                 },
-                pylsp_mypy = { enabled = true, },
-                rope_autoimport = {
+                flake8 = {
                     enabled = true,
-                    memory = true,
+                    perFileIgnores = { "__init__.py:F401" },
+
                 },
+                pycodestyle = { enabled = false },
+                pydocstyle = { enabled = false },
+                autopep8 = { enabled = false },
+                pylint = { enabled = false },
+                pylsp_mypy = { enabled = false },
+                rope_autoimport = { enabled = false },
 
-                --- diabled plugings
-                --autopep8 = { enabled = false },
-                --yapf = { enabled = false },
-                --flake8 = { enabled = false },
-                --pylint = { enabled = false },
-            }
-        }
-    }
-})
-
-lspconfig.ruff.setup({
-    init_options = {
-        settings = {
-            lineLength = 100,
-            lint = {
-                enable = true,
-                select = { "I" },
             },
+            trace = { server = "verbose" },
         }
     }
 })
+
+--- disbale ruff for now
+--lspconfig.ruff.setup({
+--    init_options = {
+--        settings = {
+--            lineLength = 100,
+--            lint = {
+--                enable = true,
+--                select = { "I" },
+--            },
+--        }
+--    }
+--})
 
 
 -- lua setup
