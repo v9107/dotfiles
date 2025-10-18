@@ -15,6 +15,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	lazy = true,
 	config = function()
-		require("customs.lsp")
+		require("customs.lsp_v2").setup()
 	end,
 }

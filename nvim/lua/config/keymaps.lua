@@ -2,12 +2,13 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 local function floating_oil_window()
+	local oil = require("oil")
 	local current_file_path = vim.api.nvim_buf_get_name(0)
 	if current_file_path then
 		local current_dir = string.match(current_file_path, "(.*/)")
-		require("oil").toggle_float(current_dir)
+		oil.open_float(current_dir)
 	else
-		require("oil").toggle_float(".")
+		oil.open_float(".", { border = 2 })
 	end
 end
 

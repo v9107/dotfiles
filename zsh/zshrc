@@ -72,3 +72,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# set up node with fnm (fast node manager)
+eval "$(fnm env --use-on-cd --shell zsh)"

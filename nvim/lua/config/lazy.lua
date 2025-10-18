@@ -1,8 +1,10 @@
 local k = vim.keycode
+
 vim.g.mapleader = k("<space>")
 vim.g.termguicolors = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
@@ -23,7 +25,7 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "zenwritten" } },
+	install = { colorscheme = { "github_dark_dimmed", "nord" } },
 	checker = {
 		enabled = true,
 		notify = false,
@@ -50,5 +52,3 @@ local modules = { "config.autocmds", "config.options", "config.keymaps", "config
 for _, mod in ipairs(modules) do
 	pcall(require, mod)
 end
-
-vim.cmd.colorscheme("kanagawa")

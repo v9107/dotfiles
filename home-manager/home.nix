@@ -21,6 +21,9 @@
     pkgs.nixfmt-rfc-style # formatter for .nix files
     pkgs.deno
     pkgs.lazygit
+    pkgs.uv
+    pkgs.fnm
+
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -71,7 +74,7 @@
   #  /etc/profiles/per-user/venkatesh/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = rec {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";

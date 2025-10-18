@@ -2,6 +2,6 @@ return {
 	dir = "~/dev/projects/crunner/",
 	name = "crunner",
 	config = function()
-		require("crunner").setup()
+		require("crunner").setup({name = "Venkatesh"})
 	end,
 }

@@ -1,5 +1,6 @@
 --vim.opt.guicursor = ""                     -- disable the cursor change when in insert mode
 
+vim.opt.showtabline = 2
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
