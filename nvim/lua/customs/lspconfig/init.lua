@@ -1,8 +1,10 @@
 local M = {}
 
-M.init_mason = function()
+--- @param ensure_installed table<string>
+--- @return nil
+M.init_mason = function(ensure_installed)
 	require("mason").setup()
-	require("mason-lspconfig").setup({ ensure_installed = { "lua_ls" }, automatic_installation = true })
+	require("mason-lspconfig").setup({ ensure_installed = ensure_installed, automatic_installation = true })
 end
 
 M.init_formatter = function()
@@ -13,7 +15,7 @@ M.init_formatter = function()
 			rust = { "rustfmt" },
 			nix = { "nixfmt" },
 		},
-		format_after_save = nil,
+		format_after_save = true,
 	})
 end
 
@@ -77,70 +79,38 @@ M.auto_completion = function()
 	})
 end
 
-M.lsp_setup = function(config)
-	-- lsp setup
+--- @class ServerConfig
+--- @field settings table<string, any> The settings of the server
+--- @field capabilities? table<string, any> Optional capabilities if not then default ones will be used
+---
+--- @param server_configs { [string]: ServerConfig }
+M.lsp_setup = function(server_configs)
 	local protocol = require("vim.lsp.protocol")
 	local capabilities = require("cmp_nvim_lsp").default_capabilities(protocol.make_client_capabilities())
 
-	--- Python LSP setup
-	vim.lsp.config("pylsp", {
-		capabilities = capabilities,
-		settings = {
-			pylsp = {
-				configurationSources = {},
-				plugins = {
-					jedi_completion = {
-						enabled = true,
-						include_params = true,
-						fuzzy = true,
-					},
-					flake8 = {
-						enabled = true,
-						perFileIgnores = { "__init__.py:F401" },
-					},
-					pycodestyle = { enabled = false },
-					pydocstyle = { enabled = false },
-					autopep8 = { enabled = false },
-					pylint = { enabled = false },
-					pylsp_mypy = { enabled = false },
-					rope_autoimport = { enabled = false },
-				},
-				trace = { server = "verbose" },
-			},
-		},
-	})
-
-	--- lua setup
-	vim.lsp.config("lua_ls", {
-		capabilities = capabilities,
-	})
-
-	--- go setup
-	vim.lsp.config("gopls", {
-		capabilities = capabilities,
-	})
-
-	--- ocaml lsp setup
-	vim.lsp.config("ocamllsp", {
-		capabilities = capabilities,
-	})
-
-	--- rust lsp setup
-	vim.lsp.config("rust_analyzer", {
-		capabilities = capabilities,
-	})
+	for server, config in pairs(server_configs) do
+		if not config.capabilities then
+			config.capabilities = capabilities
+		end
+		vim.lsp.config(server, config)
+	end
 end
 
+--- setting up and configuring the lsp
 M.setup = function()
+    
+	require("luasnip.loaders.from_vscode").lazy_load()
+	local server_configs = require("customs.lspconfig.servers")
+
 	vim.cmd.completeopt = { "menuone", "noinsert", "noselect" }
 
-	--- Miselenious
-	require("luasnip.loaders.from_vscode").lazy_load()
-
-	M.init_mason()
+	M.init_mason({ "lua_ls" })
 	M.init_formatter()
 	M.auto_completion()
-	M.lsp_setup()
+
+	if server_configs then
+		M.lsp_setup(server_configs.configurations)
+	end
 end
 
 return M
