@@ -15,9 +15,10 @@ end
 keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", opts)
 keymap.set("n", "<leader>m", "<cmd>Mason<cr>", opts)
 keymap.set("n", "<leader>e", floating_oil_window, opts)
-keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", opts)
 keymap.set("n", "<tab>", "<cmd>tabn<cr>", opts)
 keymap.set("n", "<s-tab>", "<cmd>tabp<cr>", opts)
+-- TODO: update this to create a terminal in new tab instead of using ToggleTerm
+-- keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", opts)
 
 keymap.set("n", "<leader>cb", "<cmd>set background=light<cr>", opts) -- change background to light
 
@@ -31,5 +32,3 @@ keymap.set("n", "<leader>vh", "<cmd>Telescope help_tags<cr>", opts)
 
 keymap.set("n", "<leader>vs", "<cmd>vs<cr><cmd>wincmd l<cr>", opts) -- split screen
 keymap.set("n", "<leader>hs", "<cmd>split<cr><cmd>wincmd j<cr>", opts)
-
-keymap.set("n", "<leader>ng", "<cmd>Neogit<cr>", opts)

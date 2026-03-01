@@ -24,7 +24,6 @@
     pkgs.uv
     pkgs.fnm
 
-
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -79,10 +78,11 @@
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
+    GO_PATH = "/usr/local/go/bin";
 
     # Not officially in the specification
     XDG_BIN_HOME = "$HOME/.local/bin";
-    PATH = "$HOME/.cargo/bin:${pkgs.zsh}:${pkgs.coreutils}:${XDG_BIN_HOME}:$PATH";
+    PATH = "$PATH:$HOME/.cargo/bin:${pkgs.zsh}:${pkgs.coreutils}:${XDG_BIN_HOME}:${GO_PATH}";
     MYPY_CACHE_DIR = "/dev/null";
   };
 
@@ -105,7 +105,7 @@
         size = 10000;
         path = "${config.xdg.dataHome}/zsh/history";
       };
-      dotDir = ".config/zsh";
+      dotDir = "${config.home.homeDirectory}/.config/zsh";
     };
     nushell.enable = true;
     starship = {
